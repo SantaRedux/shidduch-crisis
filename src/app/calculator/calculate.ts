@@ -4,7 +4,8 @@ export const findLeftoverRate = (params: any) => {
     const fOtdDecimal = fOtd / 100;
     
     const kidsPerYear = kidsTotal / fertilityWindow;
-    const popPlusYear = pop => pop += pop * pctFertile * kidsPerYear;
+    const deathRate = 0.012;
+    const popPlusYear = pop => pop += (pop * pctFertile * kidsPerYear) - (pop * deathRate);
     const change = popPlusYear(start) - start;
     const rate = change / (start);
     
