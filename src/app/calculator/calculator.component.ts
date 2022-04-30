@@ -10,8 +10,8 @@ export class CalculatorComponent implements OnInit {
   leftoverRate?;
   message?;
   params = {
-    mAge: 23,
-    fAge: 21,
+    mAge: this.formatNum(23),
+    fAge: 2.5,
     mOtd: 2,
     fOtd: 2,
     start: 10000000,
@@ -39,13 +39,17 @@ export class CalculatorComponent implements OnInit {
       this.message = "back off. women get married younger than men here."
     else {
       this.message = null;
-      this.params[param] = num;
+      this.params[param] = this.formatNum(num);
       console.log('params: ', this.params)
     }
   }
 
+  formatNum(n) {
+    return parseInt((Math.round(n * 100) / 100).toFixed(2));
+  }
+
   formatRate(_r) {
     const r = _r * 100;
-    return (Math.round(r * 100) / 100).toFixed(2)
+    return this.formatNum(r);
   }
 }
