@@ -10,14 +10,14 @@ export class CalculatorComponent implements OnInit {
   leftoverRate?;
   message?;
   params = {
-    mAge: this.formatNum(23),
-    fAge: 2.5,
+    mAge: 24,
+    fAge: 20,
     mOtd: 2,
     fOtd: 2,
     start: 10000000,
     pctFertile: 0.1,
-    kidsTotal: 6, 
-    fertilityWindow: 20
+    kidsTotal: 5, 
+    fertilityWindow: 18
   }
 
   constructor() { }

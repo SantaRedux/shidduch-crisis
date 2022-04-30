@@ -1,6 +1,17 @@
 <div>
     <div *ngIf="message" class="red-text">{{message}}</div>
     <div>
+        <label for="new-hero">Mothers give birth across </label>
+        <input id="new-hero" #fertilityWindow [defaultValue]="params.fertilityWindow"
+            (change)="inputParam('fertilityWindow', _parseInt(fertilityWindow.value))"/> years.
+    </div>
+    <div>
+        <label for="new-hero">On average, mothers birth </label>
+        <input id="new-hero" #kidsTotal [defaultValue]="params.kidsTotal"
+            (change)="inputParam('kidsTotal', _parseInt(kidsTotal.value))"/> children.
+    
+    </div>
+    <div>
         <label for="new-hero">The median choson is </label>
         <input id="new-hero" #mAge [defaultValue]="params.mAge" (change)="inputParam('mAge', _parseInt(mAge.value))"/> years old.
     </div>
@@ -24,24 +35,13 @@
             (change)="inputParam('fOtd', _parseInt(fOtd.value))"/>% of women go otd.
       
     </div>
-    <div>
-        <label for="new-hero">Mothers give birth across </label>
-        <input id="new-hero" #fertilityWindow [defaultValue]="params.fertilityWindow"
-            (change)="inputParam('fertilityWindow', _parseInt(fertilityWindow.value))"/> years.
-
-      
-    </div>
-    <div>
-        <label for="new-hero">On average, mothers birth </label>
-        <input id="new-hero" #kidsTotal [defaultValue]="params.kidsTotal"
-            (change)="inputParam('kidsTotal', _parseInt(kidsTotal.value))"/> children.
-
-    </div>
 </div>
 <nav>
-    <button type="button" class="add-button" (click)="calculate(this.params)">
-        Submit
-    </button>
+    <div class="button-container">
+        <button type="button" class="add-button" (click)="calculate(this.params)">
+            Submit
+        </button>
+    </div>
 </nav>
 
 <div *ngIf="leftoverRate || leftoverRate === 0">

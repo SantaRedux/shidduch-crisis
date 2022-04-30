@@ -2,6 +2,10 @@
     color: red;
 }
 
+.button-container {
+    margin-top: 20px;
+}
+
 input {
     width: 20px;
 }
@@ -36,6 +40,6 @@ nav button:active {
 }
 
 h3 {
-    padding-top: 5%;
+    padding-top: 15%;
     text-align: center
 }
