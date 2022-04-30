@@ -1,0 +1,73 @@
+<div>
+    <div *ngIf="message" class="red-text">{{message}}</div>
+    <div>
+        <label for="new-hero">The median choson is </label>
+        <input id="new-hero" #mAge [defaultValue]="params.mAge"/> years old.
+      
+        <!-- (click) passes input value to add() and then clears the input -->
+        <button type="button" class="add-button" (click)="inputParam('mAge', _parseInt(mAge.value))">
+            Change
+        </button>
+    </div>
+    <div>
+        <label for="new-hero">The median kallah is </label>
+        <input id="new-hero" #fAge [defaultValue]="params.fAge"/> years old.
+      
+        <!-- (click) passes input value to add() and then clears the input -->
+        <button type="button" class="add-button" (click)="inputParam('fAge', _parseInt(fAge.value))">
+            Change
+        </button>
+    </div>
+    <div>
+        <label for="new-hero"></label>
+        <input id="new-hero" #mOtd [defaultValue]="params.mOtd"/>% of bochurim go otd.
+      
+        <!-- (click) passes input value to add() and then clears the input -->
+        <button type="button" class="add-button" (click)="inputParam('mOtd', _parseInt(mOtd.value))">
+            Change
+        </button>
+    </div>
+    <div>
+        <label for="new-hero"></label>
+        <input id="new-hero" #fOtd [defaultValue]="params.fOtd"/>% of women go otd.
+      
+        <!-- (click) passes input value to add() and then clears the input -->
+        <button type="button" class="add-button" (click)="inputParam('fOtd', _parseInt(fOtd.value))">
+            Change
+        </button>
+    </div>
+    <div>
+        <label for="new-hero">Mothers birth children over the course of </label>
+        <input id="new-hero" #fertilityWindow [defaultValue]="params.fertilityWindow"/> years
+      
+        <!-- (click) passes input value to add() and then clears the input -->
+        <button type="button" class="add-button" (click)="inputParam('fertilityWindow', _parseInt(fertilityWindow.value))">
+            Change
+        </button>
+    </div>
+    <div>
+        <label for="new-hero">The average mother births </label>
+        <input id="new-hero" #kidsTotal [defaultValue]="params.kidsTotal"/> children.
+      
+        <!-- (click) passes input value to add() and then clears the input -->
+        <button type="button" class="add-button" (click)="inputParam('kidsTotal', _parseInt(kidsTotal.value))">
+          Change
+        </button>
+    </div>
+    <!-- <div>
+        <label for="new-hero"></label>
+        <input id="new-hero" #pctFertile [defaultValue]="1 - params.pctFertile"/>% of woman are infertile
+      
+        <button type="button" class="add-button" (click)="inputParam('pctFertile', (1 - (_parseInt(pctFertile.value) / 100)))">
+          Change
+        </button>
+    </div>  -->
+</div>
+
+<button type="button" class="add-button" (click)="calculate(this.params)">
+    Submit
+</button>
+
+<div *ngIf="leftoverRate || leftoverRate === 0">
+    <h4>{{formatRate(leftoverRate)}} % of women in this cohort don't have a male counterpart</h4>
+</div>
