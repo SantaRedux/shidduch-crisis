@@ -50,6 +50,6 @@ export class CalculatorComponent implements OnInit {
 
   formatRate(_r) {
     const r = _r * 100;
-    return this.formatNum(r);
+    return (Math.round(r * 100) / 100).toFixed(2);
   }
 }
